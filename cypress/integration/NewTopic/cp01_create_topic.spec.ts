@@ -7,19 +7,9 @@ describe('CP01 - Create New Topic Test', () => {
     // Hacer clic en el botón de "Log In"
     cy.contains('Log In').click();
 
-
-    // Verificar si las variables de entorno se están cargando correctamente
-    const username = Cypress.env('USERNAME')
-    const password = Cypress.env('PASSWORD');
-
-    // Log de las variables para depuración
-    cy.log('Username:', username);
-    cy.log('Password:', password);
-
-
     // Ingresar el nombre de usuario y la contraseña
-    cy.get('#login-account-name').type(Cypress.env('USERNAME')); 
-    cy.get('#login-account-password').type(Cypress.env('PASSWORD'));
+    cy.get('#login-account-name').type('user');
+    cy.get('#login-account-password').type('HWvTMd6Hha@I');
 
     // Hacer clic en el botón de iniciar sesión usando el XPath obteniud
     cy.xpath('/html/body/section/div[1]/div[9]/div[1]/div/div[2]/div/div[2]/button[1]/span').click();
@@ -33,7 +23,7 @@ describe('CP01 - Create New Topic Test', () => {
 
     // Validar el contenido del tema con longitud válida (entre 20 y 32000 caracteres)
     const validContent = 'Este es un cuerpo válido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.';
-    cy.get('textarea[id="ember70"]').type(validContent);
+    cy.get('textarea[id="ember71"]').type(validContent);
 
 
 

@@ -6,8 +6,8 @@ dotenv.config();
 export default defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-      config.env.username = process.env.CYPRESS_USERNAME;
-      config.env.password = process.env.CYPRESS_PASSWORD;
+      config.env.username = "user";
+      config.env.password = "HWvTMd6Hha@I";
 
       return config;
     },
