@@ -1,27 +1,62 @@
+
 describe('CP01 - Create New Topic Test', () => {
-    it('Should log in and create a valid new topic', () => {
-      cy.visit('http://192.168.1.3/latest');
-      cy.contains('Log In').click();
-      cy.get('#login-account-name').type(Cypress.env('USERNAME'));
-      cy.get('#login-account-password').type(Cypress.env('PASSWORD'));
-      cy.get('.login-button').click(); // Asumiendo que el botón tiene una clase 'login-button'
-  
-      cy.contains('New Topic').should('be.visible').click();
-      const validTitle = 'Este es un título correcto para el tema';
-      cy.get('#reply-title').type(validTitle);
-      const validContent = 'Este es un cuerpo válido para el contenido.';
-      cy.get('textarea#ember70').type(validContent);
-  
-      // Uso de selectores más específicos y robustos
-      cy.get('.category-input').within(() => {
-        cy.get('summary').click();
-        cy.get('[data-name="General"]').click();
-        cy.get('summary').click();
-        cy.get('[data-name="Staff"]').click();
-      });
-  
-      cy.get('.btn-primary.create').click(); // Selector corregido
-      cy.contains(validTitle).should('be.visible');
-    });
+  it('Should log in and create a valid new topic', () => {
+    // Visitar la página de Discourse
+    cy.visit('http://192.168.1.3/latest');
+
+    // Hacer clic en el botón de "Log In"
+    cy.contains('Log In').click();
+
+
+    // Verificar si las variables de entorno se están cargando correctamente
+    const username = Cypress.env('USERNAME')
+    const password = Cypress.env('PASSWORD');
+
+    // Log de las variables para depuración
+    cy.log('Username:', username);
+    cy.log('Password:', password);
+
+
+    // Ingresar el nombre de usuario y la contraseña
+    cy.get('#login-account-name').type(Cypress.env('USERNAME')); 
+    cy.get('#login-account-password').type(Cypress.env('PASSWORD'));
+
+    // Hacer clic en el botón de iniciar sesión usando el XPath obteniud
+    cy.xpath('/html/body/section/div[1]/div[9]/div[1]/div/div[2]/div/div[2]/button[1]/span').click();
+
+    // Esperar que el botón "New Topic" esté visible y hacer clic en él
+    cy.contains('New Topic').should('be.visible').click();
+
+    // Validar el título del tema con longitud válida (entre 15 y 255 caracteres)
+    const validTitle = 'Este es un título correcto para el tema';
+    cy.get('input[id="reply-title"]').type(validTitle);
+
+    // Validar el contenido del tema con longitud válida (entre 20 y 32000 caracteres)
+    const validContent = 'Este es un cuerpo válido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.';
+    cy.get('textarea[id="ember70"]').type(validContent);
+
+
+
+    // Validar etiquetas válidas
+    // Abrir el desplegable de categorías y seleccionar etiquetas válidas
+    cy.get('.category-input summary').click(); // Abrir el desplegable de categorías
+
+    // Seleccionar la categoría "General"
+    cy.get('div[role="menuitemradio"][data-name="General"]').click();
+
+    // Seleccionar la categoría "Staff"
+    cy.get('.category-input summary').click(); // Volver a abrir el desplegable de categorías
+    cy.get('div[role="menuitemradio"][data-name="Staff"]').click();
+
+    // Seleccionar la categoría "Site Feedback"
+    cy.get('.category-input summary').click(); // Volver a abrir el desplegable de categorías
+    cy.get('div[role="menuitemradio"][data-name="Site Feedback"]').click();
+
+
+    // Enviar el nuevo tema
+    cy.get('.btn-primary.create').click();
+
+    // Validar que el tema se ha creado correctamente (puedes ajustar esto según el comportamiento esperado)
+    cy.contains(validTitle).should('be.visible');
   });
-  
+});

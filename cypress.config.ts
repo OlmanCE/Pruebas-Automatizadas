@@ -1,12 +1,17 @@
 import { defineConfig } from 'cypress';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 export default defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-      // Cargar configuración del archivo de plugins
-      require('./plugins/index').default(on, config);
+      config.env.username = process.env.CYPRESS_USERNAME;
+      config.env.password = process.env.CYPRESS_PASSWORD;
+
+      return config;
     },
-    specPattern: 'cypress/integration/**/*.ts', // Ruta a archivos de pruebas
-    supportFile: 'cypress/support/e2e.ts', // Archivo de soporte
+    // Otros parámetros de configuración pueden ir aquí
+    specPattern: 'cypress/integration/**/*.ts', // Ajusta el patrón de búsqueda de archivos de prueba
   },
 });
