@@ -12,6 +12,6 @@ export default defineConfig({
       return config;
     },
     // Otros parámetros de configuración pueden ir aquí
-    specPattern: 'cypress/integration/**/*.ts', // Ajusta el patrón de búsqueda de archivos de prueba
+    specPattern: 'cypress/integration/**/*.ts', //patrón de búsqueda de archivos de prueba
   },
 });

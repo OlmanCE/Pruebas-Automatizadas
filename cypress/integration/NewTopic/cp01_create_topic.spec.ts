@@ -1,52 +1,57 @@
+describe('Create New Topic Test', () => {
+  const baseUrl = 'http://192.168.1.3/latest';
+  const username = 'user';
+  const password = 'HWvTMd6Hha@I';
 
-describe('CP01 - Create New Topic Test', () => {
-  it('Should log in and create a valid new topic', () => {
-    // Visitar la página de Discourse
-    cy.visit('http://192.168.1.3/latest');
-
-    // Hacer clic en el botón de "Log In"
+  beforeEach(() => {
+    cy.visit(baseUrl);
     cy.contains('Log In').click();
-
-    // Ingresar el nombre de usuario y la contraseña
-    cy.get('#login-account-name').type('user');
-    cy.get('#login-account-password').type('HWvTMd6Hha@I');
-
-    // Hacer clic en el botón de iniciar sesión usando el XPath obteniud
+    cy.get('#login-account-name').type(username);
+    cy.get('#login-account-password').type(password);
     cy.xpath('/html/body/section/div[1]/div[9]/div[1]/div/div[2]/div/div[2]/button[1]/span').click();
+  });
 
-    // Esperar que el botón "New Topic" esté visible y hacer clic en él
-    cy.contains('New Topic').should('be.visible').click();
+  const testCases = [
+    {
+      title: 'Este es un título correcto para el tema',
+      content: 'Este es un cuerpo válido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.',
+      categories: ['General', 'Staff', 'Site Feedback'],
+      valid: true
+    },
+    {
+      title: 'A',
+      content: 'Hola',
+      categories: ['General'],
+      valid: false
+    },
+    {
+      title: 'Título largo'.repeat(25),
+      content: 'Contenido largo'.repeat(1000),
+      categories: ['General', 'Staff'],
+      valid: true
+    },
+    // Agrega más casos de prueba según sea necesario
+  ];
 
-    // Validar el título del tema con longitud válida (entre 15 y 255 caracteres)
-    const validTitle = 'Este es un título correcto para el tema';
-    cy.get('input[id="reply-title"]').type(validTitle);
+  testCases.forEach((testCase, index) => {
+    it(`Should create new topic - Case ${index + 1}`, () => {
+      cy.contains('New Topic').should('be.visible').click();
+      cy.get('input[id="reply-title"]').type(testCase.title);
+      cy.get('textarea[id="ember72"]').type(testCase.content);
 
-    // Validar el contenido del tema con longitud válida (entre 20 y 32000 caracteres)
-    const validContent = 'Este es un cuerpo válido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.';
-    cy.get('textarea[id="ember71"]').type(validContent);
+      testCase.categories.forEach(category => {
+        cy.get('.category-input summary').click();
+        cy.get(`div[role="menuitemradio"][data-name="${category}"]`).click();
+      });
 
+      cy.get('.btn-primary.create').click();
 
-
-    // Validar etiquetas válidas
-    // Abrir el desplegable de categorías y seleccionar etiquetas válidas
-    cy.get('.category-input summary').click(); // Abrir el desplegable de categorías
-
-    // Seleccionar la categoría "General"
-    cy.get('div[role="menuitemradio"][data-name="General"]').click();
-
-    // Seleccionar la categoría "Staff"
-    cy.get('.category-input summary').click(); // Volver a abrir el desplegable de categorías
-    cy.get('div[role="menuitemradio"][data-name="Staff"]').click();
-
-    // Seleccionar la categoría "Site Feedback"
-    cy.get('.category-input summary').click(); // Volver a abrir el desplegable de categorías
-    cy.get('div[role="menuitemradio"][data-name="Site Feedback"]').click();
-
-
-    // Enviar el nuevo tema
-    cy.get('.btn-primary.create').click();
-
-    // Validar que el tema se ha creado correctamente (puedes ajustar esto según el comportamiento esperado)
-    cy.contains(validTitle).should('be.visible');
+      if (testCase.valid) {
+        cy.contains(testCase.title).should('be.visible');
+      } else {
+        cy.contains('There was an error').should('be.visible');
+      }
+      cy.wait(6000);
+    });
   });
 });
