@@ -1,0 +1,104 @@
+[
+    {
+      "title": "Este es un titulo correcto para el tema1",
+      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+      "categories": ["General", "Staff", "Site Feedback"],
+      "valid": true
+    },
+    {
+      "title": "Este es un titulo correcto para el tema2",
+      "content": "Menosde20caracte",
+      "categories": ["General"],
+      "valid": false,
+      "errorMessage": "Post must be at least 20 characters"
+    },
+    {
+      "title": "Este es un titulo correcto para el tema3",
+      "content": "Mas de 32000 caracteres",
+      "categories": ["General"],
+      "valid": false,
+      "errorMessage": "Body is limited to 32000 characters"
+    },
+    {
+      "title": "Este es un titulo correcto para el tema4",
+      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+      "categories": [""],
+      "valid": true
+    },
+    {
+      "title": "Este es un titulo correcto para el tema5  ",
+      "content": "Hola",
+      "categories": ["Site Feedback"],
+      "valid": false,
+      "errorMessage": "Post must be at least 20 characters"
+    },
+    {
+      "title": "Este es un titulo correcto para el tema6",
+      "content": "Mas de 32000 caracteres invalid",
+      "categories": ["Staff", "Site Feedback"],
+      "valid": false,
+      "errorMessage": "Body is limited to 32000 characters"
+    },
+    {
+      "title": "Este es un titulo correcto para el tema7",
+      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+      "categories": ["General", "Staff", "Site Feedback"],
+      "valid": true
+    },
+    {
+      "title": "Este es un titulo correcto para el tema8",
+      "content": "Invalido.",
+      "categories": ["Staff", "Site Feedback"],
+      "valid": false,
+      "errorMessage": "Post must be at least 20 characters"
+    },
+    {
+      "title": "Este es un titulo correcto para el tema9",
+      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+      "categories": ["General", "Staff", "Site Feedback"],
+      "valid": true
+    },
+    {
+      "title": "15charactersCP10",
+      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+      "categories": ["General"],
+      "valid": false,
+      "errorMessage": "Title must be at least 15 characters"
+    },
+    {
+      "title": "15charactersCP11",
+      "content": "15characters",
+      "categories": ["General"],
+      "valid": false,
+      "errorMessage": "Title must be at least 15 characters"
+    },
+    {
+      "title": "15charactersCP12",
+      "content": "Hola",
+      "categories": ["Site Feedback"],
+      "valid": false,
+      "errorMessage": "Title must be at least 15 characters"
+    },
+    {
+      "title": "Este es un titulo correcto para el tema13",
+      "content": "Mas de 32000 caracteres invalid",
+      "categories": ["Staff", "Site Feedback"],
+      "valid": false,
+      "errorMessage": "Body is limited to 32000 characters"
+    },
+    {
+      "title": "Este es un titulo correcto para el tema14",
+      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+      "categories": ["General", "Staff", "Site Feedback"],
+      "valid": true
+    },
+    {
+      "title": "Este es un titulo correcto para el tema15",
+      "content": "Invalido.",
+      "categories": ["Staff", "Site Feedback"],
+      "valid": false,
+      "errorMessage": "Post must be at least 20 characters"
+    }
+    
+
+  ]
