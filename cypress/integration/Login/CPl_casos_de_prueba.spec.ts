@@ -63,8 +63,12 @@ describe('Casos de prueba de Registro', () => {
         cy.get('#login-account-name').type('pepito@noexisto.jeje');     
         cy.get('#login-account-password').type('asfasfasfas');   
     
+        cy.wait(2000)
+
         // Hacer clic en el botón de iniciar sesión usando el XPath obteniud
         cy.xpath('/html/body/section/div[1]/div[9]/div[1]/div/div[2]/div/div[2]/button[1]/span').click();
+
+        cy.wait(2000)
   
         cy.contains('Incorrect username, email or password').should('be.visible'); 
       });   
@@ -76,8 +80,12 @@ describe('Casos de prueba de Registro', () => {
         cy.get('#login-account-name').type('pepito@noexisto.jeje');     
         cy.get('#login-account-password').type('lacasaamasada');   
     
+        cy.wait(2000)
+
         // Hacer clic en el botón de iniciar sesión usando el XPath obteniud
         cy.xpath('/html/body/section/div[1]/div[9]/div[1]/div/div[2]/div/div[2]/button[1]/span').click();
+
+        cy.wait(10000)
   
         cy.contains('Resend Activation Email').should('be.visible'); 
       });    
@@ -87,13 +95,17 @@ describe('Casos de prueba de Registro', () => {
 
         cy.get('#login-account-name').type('pepito@noexisto.jeje');        
 
+        cy.wait(2000)
     
         // Hacer clic en el botón de iniciar sesión usando el XPath obteniud
         cy.xpath('/html/body/section/div[1]/div[9]/div[1]/div/div[2]/div/div[2]/button[1]/span').click();
+
+        cy.wait(2000)
   
         cy.contains('Please enter your email or username, and password.').should('be.visible'); 
   
       });
+
       
       it('CPl-08 Caso de prueba incorrecto con email con dos @ y contraseña muy corta', () => {
         // Es importante destacar que para que esto funcione, el email tuvo que haber sido previamente registrado!!!!
@@ -101,13 +113,24 @@ describe('Casos de prueba de Registro', () => {
 
         cy.get('#login-account-name').type('pe@pito@noexisto.jeje');     
         cy.get('#login-account-password').type('la');   
+
+        cy.intercept('POST', 'http://192.168.1.101/session').as('usernameAvailability')
+      
     
         // Hacer clic en el botón de iniciar sesión usando el XPath obteniud
         cy.xpath('/html/body/section/div[1]/div[9]/div[1]/div/div[2]/div/div[2]/button[1]/span').click();
-  
-        cy.contains('Incorrect username, email or password').should('be.visible'); 
-      });      
 
+        // Wait for the username availability check to complete
+        cy.wait('@usernameAvailability').then(() => {
+          // Validate that the password validation message is displayed
+          cy.get('#modal-alert')
+            .should('be.visible')
+            .and('contain.text', 'Incorrect username, email or password');
+
+        });
+  
+      });      
+    
       it('CPl-09 Caso de prueba incorrecto con email con dos @ y contraseña muy larga', () => {
         // Es importante destacar que para que esto funcione, el email tuvo que haber sido previamente registrado!!!!
         // Ingresar el nombre de usuario y la contraseña
