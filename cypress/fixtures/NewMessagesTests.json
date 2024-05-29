@@ -1,0 +1,142 @@
+[
+    {
+        "users":"discobot",
+        "title":"Titulo valido",
+        "body":"Cuerpo del mensaje valido",
+        "valid":true
+    },
+    {
+        "users":"discobot",
+        "title":"Titulo valido",
+        "body":"Hola",
+        "valid":false,
+        "errorMessage":"Post must be at least 10 characters"
+    },
+    {
+        "users":"",
+        "title":"Titulo valido",
+        "body":"32000",
+        "valid":false,
+        "errorMessage":"An error occurred: Body is limited to 32000 characters; you entered 32001"
+    },
+    {
+        "users":"",
+        "title":"Titulo valido",
+        "body":"Cuerpo del mensaje valido",
+        "valid":false,
+        "errorMessage":"An error occurred: You must select a valid user"
+    },
+    {
+        "users":"",
+        "title":"Titulo valido",
+        "body":"Hola",
+        "valid":false,
+        "errorMessage":"Post must be at least 10 characters"
+    },
+    {
+        "users":"",
+        "title":"Titulo valido",
+        "body":"32000",
+        "valid":false,
+        "errorMessage":"An error occurred: Body is limited to 32000 characters; you entered 32001"
+    },
+    {
+        "users":"PepitoElGrillo",
+        "title":"Titulo valido",
+        "body":"Cuerpo del mensaje valido",
+        "valid":false,
+        "errorMessage":"No matches found"
+    },
+    {
+        "users":"PepitoElGrillo",
+        "title":"Titulo valido",
+        "body":"Hola",
+        "valid":false,
+        "errorMessage":"No matches found"
+    },
+    {
+        "users":"PepitoElGrillo",
+        "title":"Titulo valido",
+        "body":"32000",
+        "valid":false,
+        "errorMessage":"No matches found"
+    },
+    {
+        "users":"",
+        "title":"H",
+        "body":"Cuerpo del mensaje valido",
+        "valid":false,
+        "errorMessage":"Title must be at least 2 characters"
+    },
+    {
+        "users":"",
+        "title":"H",
+        "body":"Hola",
+        "valid":false,
+        "errorMessage":"Title must be at least 2 characters"
+    },
+    {
+        "users":"",
+        "title":"H",
+        "body":"32000",
+        "valid":false,
+        "errorMessage":"An error occurred: You must select a valid user"
+    },
+    {
+        "users":"",
+        "title":"212",
+        "body":"Cuerpo del mensaje valido",
+        "valid":false,
+        "errorMessage":"An error occurred: You must select a valid user"
+    },
+    {
+        "users":"",
+        "title":"212",
+        "body":"Hola",
+        "valid":false,
+        "errorMessage":"Post must be at least 10 characters"
+    },
+    {
+        "users":"",
+        "title":"212",
+        "body":"32000",
+        "valid":false,
+        "errorMessage":"An error occurred: Body is limited to 32000 characters; you entered 32001"
+    },
+    {
+        "users":"PepitoElGrillo",
+        "title":"H",
+        "body":"Cuerpo del mensaje valido",
+        "valid":false,
+        "errorMessage":"No matches found"
+    },
+    {
+        "users":"PepitoElGrillo",
+        "title":"H",
+        "body":"Hola",
+        "valid":false,
+        "errorMessage":"No matches found"
+    },
+    {
+        "users":"PepitoElGrillo",
+        "title":"H",
+        "body":"32000",
+        "valid":false,
+        "errorMessage":"No matches found"
+    },
+    {
+        "users":"PepitoElGrillo",
+        "title":"212",
+        "body":"Cuerpo del mensaje valido",
+        "valid":false,
+        "errorMessage":"No matches found"
+    },
+    {
+        "users":"PepitoElGrillo",
+        "title":"H",
+        "body":"Hola",
+        "valid":false,
+        "errorMessage":"No matches found"
+    }
+    
+]
