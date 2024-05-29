@@ -8,7 +8,7 @@ export const login = () => {
   cy.wait(1000);
   //cy.get('#login-account-password').type('HWvTMd6Hha@I');
   cy.get('#login-account-password').type('pwJ.Su5rQmNr');
-  cy.wait(2000);
+  cy.wait(8000);
   cy.xpath('/html/body/section/div[1]/div[9]/div[1]/div/div[2]/div/div[2]/button[1]/span').click();
   cy.url().should('include', '/latest'); // Asegurarse de que la URL sea correcta después del login
 };
@@ -94,6 +94,12 @@ export const createNewMessage = (users: string, title: string, body: string) => 
     });
     return    
   }
+  cy.wait(4000);
+  cy.get('body').then($body => {
+    if ($body.find('button:contains("Ignore")').length > 0) {
+      cy.get('button:contains("Ignore")').click();      
+    }
+  });
   cy.get('button.btn.btn-icon-text.btn-primary.create').click();
   // Verificar la URL después de crear el nuevo tema con más flexibilidad
   cy.url().should('not.include', 'about:blank', { timeout: 10000 });
