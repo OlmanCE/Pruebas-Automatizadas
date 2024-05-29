@@ -98,6 +98,48 @@
       "categories": ["Staff", "Site Feedback"],
       "valid": false,
       "errorMessage": "Post must be at least 20 characters"
+    },
+    {
+      "title": "Hola",
+      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+      "categories": ["General", "Staff"],
+      "valid": false,
+      "errorMessage": "Title must be at least 15 characters"
+    },
+    {
+      "title": "Hola",
+      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+      "categories": ["General"],
+      "valid": false,
+      "errorMessage": "Title must be at least 15 characters"
+    },
+    {
+      "title": "Hola",
+      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+      "categories": ["Staff"],
+      "valid": false,
+      "errorMessage": "Title must be at least 15 characters"
+    },
+    {
+      "title": "Hola",
+      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+      "categories": ["Site Feedback"],
+      "valid": false,
+      "errorMessage": "Title must be at least 15 characters"
+    },
+    {
+      "title": "212",
+      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+      "categories": ["General"],
+      "valid": false,
+      "errorMessage": "An error occurred: Body is limited to 212 characters; you entered 213"
+    },
+    {
+      "title": "212",
+      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+      "categories": ["Staff"],
+      "valid": false,
+      "errorMessage": "An error occurred: Body is limited to 212 characters; you entered 213"
     }
     
 
