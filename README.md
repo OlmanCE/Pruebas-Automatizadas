@@ -32,6 +32,14 @@ Antes de comenzar, asegúrate de tener instalados los siguientes componentes:
 
 Antes de ejecutar las pruebas, necesitas configurar la URL de tu instancia local de Discourse Bitnami. edita los archivos con la dirección que te brinde la maquina virtual
 
+1. Además tienes que colocar las credenciales que te de la maquina virtual en el utils.ts
+    ```bash
+    cy.get('#login-account-password').type('YOUR_PASSWORD');
+    ```
+ 2. De igual forma acá en el cypress.config.ts
+    ```bash
+    config.env.password = "YOUR_PASSWORD";
+    ```
 ## Run
 
 1. Para iniciar cypress
