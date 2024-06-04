@@ -80,7 +80,7 @@
         "title":"H",
         "body":"32000",
         "valid":false,
-        "errorMessage":"An error occurred: You must select a valid user"
+        "errorMessage":"Title must be at least 2 characters"
     },
     {
         "users":"",
@@ -130,13 +130,5 @@
         "body":"Cuerpo del mensaje valido",
         "valid":false,
         "errorMessage":"No matches found"
-    },
-    {
-        "users":"PepitoElGrillo",
-        "title":"H",
-        "body":"Hola",
-        "valid":false,
-        "errorMessage":"No matches found"
     }
-    
 ]

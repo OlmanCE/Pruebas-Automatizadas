@@ -1,10 +1,10 @@
 import { use } from "chai";
 export const login = () => {
-  cy.visit('http://192.168.1.8/latest');
+  cy.visit('http://192.168.43.220/latest');
   cy.contains('Log In').click();
   cy.get('#login-account-name').type('user');
   cy.wait(1000);
-  cy.get('#login-account-password').type('4N2X7w:ba@FT');
+  cy.get('#login-account-password').type('pwJ.Su5rQmNr');
   cy.wait(8000);
   cy.xpath('/html/body/section/div[1]/div[9]/div[1]/div/div[2]/div/div[2]/button[1]/span').click();
   cy.url().should('include', '/latest'); // Asegurarse de que la URL sea correcta después del login
