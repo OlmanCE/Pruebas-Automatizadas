@@ -1,10 +1,5 @@
-def print320000():
-    f = open("320000.txt", "w")
-    text = ""
-    for i in range(3200):
-        text += '1234567890'
-    print(text)
-    print(len(text) , " letras")
-    f.close()
-    print("320000 characters printed and saved in 320000.txt")
-print320000()
+#create a funtion to write "1234567890" 32000 times to a file
+def write_to_file():
+    with open("content.txt", "w") as f:
+        f.write("1234567890" * 32000)
+write_to_file()

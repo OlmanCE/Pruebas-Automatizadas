@@ -1,103 +1,107 @@
 [
+  {
+    "title": "Este es un titulo correcto para el tema1",
+    "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+    "categories": ["General", "Staff", "Site Feedback"],
+    "valid": true
+  },
+  {
+    "title": "Este es un titulo correcto para el tema2",
+    "content": "H",
+    "categories": ["General"],
+    "valid": false,
+    "errorMessage": "Post must be at least 20 characters"
+  },
+  {
+    "title": "Este es un titulo correcto para el tema3",
+    "content": "32000",
+    "categories": ["General"],
+    "valid": false,
+    "errorMessage": "An error occurred: Body is limited to 32000 characters; you entered 32001."
+  },
+  {
+    "title": "Este es un titulo correcto para el tema4",
+    "content": "",
+    "categories": ["Staff"],
+    "valid": false,
+    "errorMessage": "Post can’t be empty"
+  },
+  {
+    "title": "Este es un titulo correcto para el tema5",
+    "content": "Hola",
+    "categories": ["Site Feedback"],
+    "valid": false,
+    "errorMessage": "Post must be at least 20 characters"
+  },
+  {
+    "title": "Este es un titulo correcto para el tema6",
+    "content": "32000",
+    "categories": ["Site Feedback"],
+    "valid": false,
+    "errorMessage": "Body is limited to 32000 characters"
+  },
+  {
+    "title": "",
+    "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+    "categories": ["General", "Staff", "Site Feedback"],
+    "valid": false,
+    "errorMessage": "Title is required"
+  },
+  {
+    "title": "Hola",
+    "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+    "categories": ["Site Feedback"],
+    "valid": false,
+    "errorMessage": "Title must be at least 15 characters"
+  },
+  {
+    "title": "212",
+    "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+    "categories": ["General"],
+    "valid": false,
+    "errorMessage": "Title can't be more than 255 characters "
+  },
     {
-      "title": "Este es un titulo correcto para el tema1",
+      "title": "menos",
       "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
-      "categories": ["General", "Staff", "Site Feedback"],
-      "valid": true
+      "categories": ["General"],
+      "valid": false,
+      "errorMessage": "Title must be at least 15 characters"
     },
     {
-      "title": "Este es un titulo correcto para el tema2",
-      "content": "Menosde20caracte",
+      "title": "Corto",
+      "content": "Corto",
       "categories": ["General"],
       "valid": false,
       "errorMessage": "Post must be at least 20 characters"
     },
     {
-      "title": "Este es un titulo correcto para el tema3",
-      "content": "Mas de 32000 caracteres",
-      "categories": ["General"],
-      "valid": false,
-      "errorMessage": "Body is limited to 32000 characters"
-    },
-    {
-      "title": "Este es un titulo correcto para el tema4",
-      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
-      "categories": [""],
-      "valid": true
-    },
-    {
-      "title": "Este es un titulo correcto para el tema5  ",
-      "content": "Hola",
+      "title": "A",
+      "content": "Juan",
       "categories": ["Site Feedback"],
       "valid": false,
       "errorMessage": "Post must be at least 20 characters"
     },
     {
-      "title": "Este es un titulo correcto para el tema6",
-      "content": "Mas de 32000 caracteres invalid",
+      "title": "212",
+      "content": "",
       "categories": ["Staff", "Site Feedback"],
       "valid": false,
-      "errorMessage": "Body is limited to 32000 characters"
+      "errorMessage": "Post can’t be empty"
     },
     {
-      "title": "Este es un titulo correcto para el tema7",
-      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+      "title": "212",
+      "content": "Olman",
       "categories": ["General", "Staff", "Site Feedback"],
-      "valid": true
+      "valid": false,
+      "errorMessage": "Title can't be more than 255 characters "
     },
     {
-      "title": "Este es un titulo correcto para el tema8",
-      "content": "Invalido.",
+      "title": "212",
+      "content": "",
       "categories": ["Staff", "Site Feedback"],
       "valid": false,
-      "errorMessage": "Post must be at least 20 characters"
-    },
-    {
-      "title": "Este es un titulo correcto para el tema9",
-      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
-      "categories": ["General", "Staff", "Site Feedback"],
-      "valid": true
-    },
-    {
-      "title": "15charactersCP10",
-      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
-      "categories": ["General"],
-      "valid": false,
-      "errorMessage": "Title must be at least 15 characters"
-    },
-    {
-      "title": "15charactersCP11",
-      "content": "15characters",
-      "categories": ["General"],
-      "valid": false,
-      "errorMessage": "Title must be at least 15 characters"
-    },
-    {
-      "title": "15charactersCP12",
-      "content": "Hola",
-      "categories": ["Site Feedback"],
-      "valid": false,
-      "errorMessage": "Title must be at least 15 characters"
-    },
-    {
-      "title": "Este es un titulo correcto para el tema13",
-      "content": "Mas de 32000 caracteres invalid",
-      "categories": ["Staff", "Site Feedback"],
-      "valid": false,
-      "errorMessage": "Body is limited to 32000 characters"
-    },
-    {
-      "title": "Este es un titulo correcto para el tema14",
-      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
-      "categories": ["General", "Staff", "Site Feedback"],
-      "valid": true
-    },
-    {
-      "title": "Este es un titulo correcto para el tema15",
-      "content": "Invalido.",
-      "categories": ["Staff", "Site Feedback"],
-      "valid": false,
-      "errorMessage": "Post must be at least 20 characters"
+      "errorMessage": "Post can’t be empty"
     },
     {
       "title": "Hola",
@@ -107,39 +111,38 @@
       "errorMessage": "Title must be at least 15 characters"
     },
     {
-      "title": "Hola",
+      "title": "",
       "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
       "categories": ["General"],
       "valid": false,
-      "errorMessage": "Title must be at least 15 characters"
+      "errorMessage": "Title is required"
     },
     {
-      "title": "Hola",
-      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+      "title": "O",
+      "content": "K",
       "categories": ["Staff"],
       "valid": false,
       "errorMessage": "Title must be at least 15 characters"
     },
     {
-      "title": "Hola",
-      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+      "title": "p",
+      "content": "32000",
       "categories": ["Site Feedback"],
       "valid": false,
       "errorMessage": "Title must be at least 15 characters"
     },
     {
       "title": "212",
-      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+      "content": "",
       "categories": ["General"],
       "valid": false,
-      "errorMessage": "An error occurred: Body is limited to 212 characters; you entered 213"
+      "errorMessage": "Title can't be more than 255 characters "
     },
     {
-      "title": "212",
-      "content": "Este es un cuerpo valido para el contenido, además puede contener imágenes, links, elementos de listas, e incluso HTML.",
+      "title": "Maria",
+      "content": "Menor",
       "categories": ["Staff"],
       "valid": false,
-      "errorMessage": "An error occurred: Body is limited to 212 characters; you entered 213"
+      "errorMessage": "Post must be at least 20 characters"
     }
-    
   ]
